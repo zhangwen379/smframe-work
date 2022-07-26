@@ -14,15 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    qtw_varlist.cpp \
-    qw_ball.cpp \
-    cmopenglwidget.cpp
+    mvariantslist.cpp \
+    qballwidget.cpp
 
 HEADERS  += mainwindow.h \
     gui.h \
-    qtw_varlist.h \
-    qw_ball.h \
-    cmopenglwidget.h
+    mvariantslist.h \
+    qballwidget.h
 
 FORMS    += mainwindow.ui
 

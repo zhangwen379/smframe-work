@@ -82,7 +82,7 @@ void VarDesc::ReadConfig(QDomElement &root,int iStartNode)
     m_slRange.clear();
     for(int i=0;i<iRangeSize;i++)
     {
-        m_slRange.push_back(List.at(1+i+iStartNode).firstChild().nodeValue());
+        m_slRange.push_back(List.at(i+iStartNode).firstChild().nodeValue());
     }
     m_sUnit=List.at(1+iRangeSize+iStartNode).firstChild().nodeValue();
     m_dRate=List.at(2+iRangeSize+iStartNode).firstChild().nodeValue().toDouble();

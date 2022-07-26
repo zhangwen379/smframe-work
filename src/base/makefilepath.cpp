@@ -23,6 +23,7 @@ QString MakeFilePath::data(const QString &FileName)
 
 QString MakeFilePath::bin(const QString &FileName)
 {
+
     QDir dir(QCoreApplication::applicationDirPath());
     return dir.absoluteFilePath(QString(FileName));
 }

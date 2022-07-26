@@ -1,7 +1,7 @@
 ﻿#include "mainwindow.h"
 #include <QApplication>
 
-#include "vsmt_allsystem.h"
+#include "varsm_thread_allsystem.h"
 #ifdef _DEBUG
 #include "vld.h"
 #endif

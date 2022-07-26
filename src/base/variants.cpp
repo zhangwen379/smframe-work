@@ -6,9 +6,9 @@ Variants::Variants()
 }
 
 void Variants::add_Variant(int iID, const QString &sName,
-                           const QVariant &vVar,bool bAddDesc,int iSerialStyle )
+                           const QVariant &vVar,bool bAddDesc,bool bNeedSerial )
 {
-    m_mVariantMap[iID]=Variant(iID, sName, vVar,iSerialStyle);
+    m_mVariantMap[iID]=Variant(iID, sName, vVar,bNeedSerial);
     if(bAddDesc)
     {
         m_gVarDescMap.add_VarDesc(iID);
@@ -43,28 +43,25 @@ void Variants::set_Variant(int iID, const QVariant &vVar)
     }
 }
 
-int Variants::WriteConfig(QDomDocument &doc, QDomElement &root)
+void Variants::WriteConfig(QDomDocument &doc, QDomElement &root)
 {
     VariantMap::iterator ii=m_mVariantMap.begin( );
-    int iIndex=0;
     for(;ii!=m_mVariantMap.end();ii++)
     {
-         if(ii->WriteConfig(doc,root)){iIndex++;}
+         ii->WriteConfig(doc,root);
     }
-    return iIndex;
 }
 
-int Variants::ReadConfig(QDomElement &root)
+void Variants::ReadConfig(QDomElement &root)
 {
     VariantMap::iterator ii=m_mVariantMap.begin( );
     QDomNodeList List= root.childNodes();
     int iIndex=0;
     for(;ii!=m_mVariantMap.end();ii++)
     {
-         if(ii->ReadConfig(List.at(iIndex).toElement()))
-         {iIndex++;}
+         ii->ReadConfig(List.at(iIndex).toElement());
+         iIndex++;
     }
-    return iIndex;
 }
 
 QDataStream &operator<<(QDataStream &out, Variants &vars)

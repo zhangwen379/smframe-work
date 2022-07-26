@@ -17,19 +17,17 @@ Variant::Variant()
 Variant::Variant(int iID)
 {
     m_iID=iID;
-    m_iSerialStyle=TONONE;
 }
 
 Variant::Variant(int iID, const QString &sName)
 {
     m_iID=iID;
     m_sName=sName;
-    m_iSerialStyle=TONONE;
 }
 
-Variant::Variant(int iID, const QString& sName, const QVariant &vVar, int iSerialStyle)
+Variant::Variant(int iID, const QString& sName, const QVariant &vVar, bool bNeedSerial)
 {
-    m_iSerialStyle=iSerialStyle;
+    m_bNeedSerial=bNeedSerial;
     m_iID=iID;
     m_vVar=vVar;
     m_sName=sName;
@@ -45,9 +43,8 @@ QDomElement Variant::AppandValueDom(QDomDocument &doc,QString& name,QString & va
     root.appendChild(domname);
     return domname;
 }
-bool Variant::WriteConfig(QDomDocument &doc, QDomElement &root)
+void Variant::WriteConfig(QDomDocument &doc, QDomElement &root)
 {
-    if(!(m_iSerialStyle&&TOXML)) return false;
     Q_ASSERT(isVariantValid());
     QDomElement elem=AppandRootDom(doc,m_sName,root);
     elem.setAttribute("ID",m_iID);
@@ -55,21 +52,12 @@ bool Variant::WriteConfig(QDomDocument &doc, QDomElement &root)
     VarDesc* pDesc=m_gVarDescMap.get_VarDesc(m_iID);
     if(pDesc)
     {
-        QVariant::Type type1= m_vVar.type();
-        if(type1!=QVariant::UInt&&type1!=QVariant::String
-                &&!pDesc->m_slRange.size())
-        {
-            pDesc->m_slRange.push_back("-100000");
-            pDesc->m_slRange.push_back("100000");
-        }
       pDesc->WriteConfig(doc,elem);
     }
-    return true;
 }
 
-bool Variant::ReadConfig(QDomElement &elem)
+void Variant::ReadConfig(QDomElement &elem)
 {
-    if(!(m_iSerialStyle&&TOXML)) return false;
     int iID=elem.attribute("ID").toInt();
     if(iID!=m_iID)
     {
@@ -99,7 +87,6 @@ bool Variant::ReadConfig(QDomElement &elem)
     {
         pDesc->ReadConfig(elem,1);
     }
-    return true;
 }
 
 QDomElement Variant::AppandRootDom(QDomDocument &doc,QString& name, QDomElement &root)
@@ -112,7 +99,7 @@ QDomElement Variant::AppandRootDom(QDomDocument &doc,QString& name, QDomElement 
 
 QDataStream &operator<<(QDataStream &out, const Variant &var)
 {
-    if(var.m_iSerialStyle&&Variant::TOFILE)
+    if(var.m_bNeedSerial)
     {
         out<<var.m_vVar;
     }
@@ -121,7 +108,7 @@ QDataStream &operator<<(QDataStream &out, const Variant &var)
 
 QDataStream &operator>>(QDataStream &in, Variant &var)
 {
-    if(var.m_iSerialStyle&&Variant::TOFILE)
+    if(var.m_bNeedSerial)
     {
         in>>var.m_vVar;
     }

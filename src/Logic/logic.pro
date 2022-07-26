@@ -13,18 +13,18 @@ TEMPLATE = lib
 CONFIG += staticlib
 
 SOURCES += \
-    vsm_thread.cpp \
-    vsmt_allsystem.cpp \
-    vsmt_ball.cpp \
-    vsw_allsystem.cpp \
-    vsw_ball.cpp
+    varsm_thread.cpp \
+    varsm_thread_ball.cpp \
+    varstate_work_ball.cpp \
+    varsm_thread_allsystem.cpp \
+    varstate_work_allsystem.cpp
 
 HEADERS += logic.h \
-    vsm_thread.h \
-    vsmt_allsystem.h \
-    vsmt_ball.h \
-    vsw_allsystem.h \
-    vsw_ball.h
+    varsm_thread.h \
+    varsm_thread_ball.h \
+    varstate_work_ball.h \
+    varsm_thread_allsystem.h \
+    varstate_work_allsystem.h
 
 unix {
     target.path = /usr/lib

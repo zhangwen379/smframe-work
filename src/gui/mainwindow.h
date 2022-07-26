@@ -16,7 +16,6 @@ public:
     ~MainWindow();
     void showEvent(QShowEvent *pEvent);
     void timerEvent(QTimerEvent *);
-    void resizeEvent(QResizeEvent *);
 private slots:
     void on_pushButton_WriteConfig_clicked();
 
@@ -31,8 +30,6 @@ private slots:
     void on_pushButton_Pause_clicked();
 
     void on_pushButton_Stop_clicked();
-
-    void on_pushButton_Apply_clicked();
 
 private:
     Ui::MainWindow *ui;

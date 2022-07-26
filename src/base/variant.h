@@ -9,24 +9,17 @@
 class Variant : public State
 {
 public:
-    enum
-    {
-      TONONE=0,
-      TOXML=1,
-      TOFILE=2,
-      TOBOTH= TOXML|TOFILE,
-    };
     Variant();
     Variant(int iID);
     Variant(int iID,const QString& sName);
-    Variant(int iID,const QString& sName, const QVariant& vVar,int iSerialStyle);
+    Variant(int iID,const QString& sName, const QVariant& vVar,bool bNeedSerial);
     bool isVariantValid();
-    int m_iSerialStyle;
+    bool m_bNeedSerial;
     int m_iID;
     QString m_sName;
     QVariant m_vVar;
-    bool WriteConfig(QDomDocument &doc, QDomElement &root);
-    bool ReadConfig(QDomElement &root);
+    void WriteConfig(QDomDocument &doc, QDomElement &root);
+    void ReadConfig(QDomElement &root);
     QDomElement AppandRootDom(QDomDocument &doc, QString& name, QDomElement &root);
     QDomElement AppandValueDom(QDomDocument &doc, QString &name, QString &value, QDomElement &root);
 };

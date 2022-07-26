@@ -19,35 +19,33 @@ SOURCES += \
     vardesc.cpp \
     vardesctable.cpp \
     variant.cpp \
+    varmsg.cpp \
+    varmsgqueue.cpp \
+    varstate.cpp \
+    varstatemachine.cpp \
+    varstate_idle.cpp \
+    varstate_pause.cpp \
+    varstate_work.cpp \
     variants.cpp \
-    makefilepath.cpp \
-    v_msg.cpp \
-    v_msgqueue.cpp \
-    v_state.cpp \
-    vs_idle.cpp \
-    vsi_pause.cpp \
-    vs_work.cpp \
-    v_statemachine.cpp \
-    cprecisetime.cpp
+    makefilepath.cpp
 
 HEADERS += \
     object.h \
     state.h \
     thing.h \
-    base.h \
-    makefilepath.h \
-    vs_idle.h \
-    vsi_pause.h \
-    vs_work.h \
-    v_statemachine.h \
-    v_msg.h \
     vardesc.h \
-    variant.h \
     vardesctable.h \
+    variant.h \
+    base.h \
+    varmsg.h \
+    varmsgqueue.h \
+    varstate.h \
+    varstatemachine.h \
+    varstate_idle.h \
+    varstate_pause.h \
+    varstate_work.h \
     variants.h \
-    v_msgqueue.h \
-    v_state.h \
-    cprecisetime.h
+    makefilepath.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
