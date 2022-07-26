@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AllSystem ID="10000">
+    <LastFile ID="10001">
+        <Value>000.smf</Value>
+    </LastFile>
+    <Ball ID="10002">
+        <PosX ID="10003">
+            <Value>0</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </PosX>
+        <PosY ID="10004">
+            <Value>0</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </PosY>
+        <SpeedX ID="10005">
+            <Value>100</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel/s</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </SpeedX>
+        <SpeedY ID="10006">
+            <Value>200</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel/s</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </SpeedY>
+        <RangeX ID="10007">
+            <Value>420</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </RangeX>
+        <RangeY ID="10008">
+            <Value>593</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </RangeY>
+        <Radius ID="10009">
+            <Value>50</Value>
+            <RangeNum>2</RangeNum>
+            <Range0>-100000</Range0>
+            <Range1>100000</Range1>
+            <Unit>pixel</Unit>
+            <Rate>1</Rate>
+            <Precise>3</Precise>
+        </Radius>
+        <Color ID="10010">
+            <Value>0</Value>
+            <RangeNum>3</RangeNum>
+            <Range0>red</Range0>
+            <Range1>green</Range1>
+            <Range2>blue</Range2>
+            <Unit></Unit>
+            <Rate>1</Rate>
+            <Precise>0</Precise>
+        </Color>
+    </Ball>
+</AllSystem>

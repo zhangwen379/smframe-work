@@ -1,0 +1,4 @@
+ Write Variant value err,need ID=10009,get ID=0.
+
+ Debug:
+file:variant.cpp,line:70,fun:Variant::ReadConfig

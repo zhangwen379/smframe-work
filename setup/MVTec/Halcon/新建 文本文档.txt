@@ -1,0 +1,6 @@
+HALCONARCH	x86sse2-win32
+HALCONEXAMPLES	C:\Program Files\MVTec\HALCON-10.0\examples
+HALCONEXTENSIONS	C:\Program Files\Common Files\IC Imaging Control 3.2\IC HALCON Extension Package\IChalcon 
+HALCONIMAGES	%HALCONROOT%\images
+HALCONROOT	C:\Program Files\MVTec\HALCON-10.0
+	
